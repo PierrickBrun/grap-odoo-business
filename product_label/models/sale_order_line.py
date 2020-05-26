@@ -17,4 +17,4 @@ class SaleOrderLine(models.Model):
         for line in self.filtered(lambda x: x.product_id):
             line.product_label_description = ", ".join(
                 line.product_id.mapped('label_ids').filtered(
-                    lambda x: x.display_on_report).mapped('code'))
+                    lambda x: x.display_on_report).mapped('note'))
